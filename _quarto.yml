@@ -1,0 +1,51 @@
+project:
+  type: website
+  output-dir: docs 
+  #looks for this -- when we build our website, turns qmd to html, 
+  # stitches everything together in a way that matches what our quarto.yml page specifies
+  # don't touch anything in the docs folder
+  # delete the _site folder!
+
+website:
+  title: "OHI Methods"
+  sidebar: # would add logo here
+  #  title: "OHI methods 2024"
+    logo: media/OHI-logo.png
+    logo-alt: "This is alt text for my logo"
+    style: "docked"
+    search: true # default is true
+    contents:
+      - href: index.qmd
+        text: Home
+        icon: house
+       # icon: #media/icon_color-circle_food-provision.png
+      - regions.qmd
+      - section: Models # used to be "text"
+ #       logo: media/icon_color-circle_food-provision.png
+        contents: # used to be "menu"
+          - index-scores.qmd # comment
+          - goal-scores.qmd
+          - section: Likely future status dimensions
+            contents:
+              - trend.qmd
+              - pressure.qmd
+              - resilience.qmd
+      - references.qmd
+      - href: https://oceanhealthindex.org/
+        text: Check out OHI
+        target: _blank
+      
+  page-footer: 
+    left: Learn more about the [Ocean Health Index](https://oceanhealthindex.org/){target=_blank}
+    # and a general overview of the [methodology](https://oceanhealthindex.org/methodology/)
+    right: Source code available on [{{< fa brands github title="the Github octocat" >}} Github](https://github.com/annaramji/ohi-test){target=_blank}
+  # {{< fa icon-name title="descriptive text for accessibility" >}}  
+            
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: false # default is true, set to true for individual pages when you want it
+    page-layout: full # if there is no TOC, expand the text all the way to the end of the browser margin
+
