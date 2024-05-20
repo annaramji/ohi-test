@@ -30,7 +30,9 @@ website:
               - trend.qmd
               - pressure.qmd
               - resilience.qmd
-      - references.qmd
+      - href: references.qmd
+        text: References
+    #    rel: <link rel="icon" href="media/icon_color-circle_food-provision.png" />
       - href: https://oceanhealthindex.org/
         text: Check out OHI
         target: _blank
